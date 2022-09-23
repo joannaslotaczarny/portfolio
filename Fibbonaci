@@ -1,0 +1,29 @@
+import sys
+def fibonacci(n):
+
+    
+    if n == 1:
+        return 1
+
+    elif n == 2:
+        return 1
+    
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+
+# Program to display the Fibonacci sequence from x to y
+
+n = int(input("First term: "))
+m = int(input("Second term: "))
+
+if n < 1:
+    print ("first term must be greater than 0")
+    sys.exit()
+
+if m > 250:
+    print ("second term must be smaller than 251")
+    sys.exit()
+
+while(n <= m):
+    print(fibonacci(n))
+    n += 1
