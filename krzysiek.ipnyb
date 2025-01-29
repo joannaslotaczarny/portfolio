@@ -1,0 +1,18 @@
+library(Seurat)
+library(ggplot2)
+library(dplyr)
+library(magrittr)
+library(Seurat)
+library(scCustomize)
+library(qs)
+library(DoubletFinder) #you don't need all of them but it's good to have them all
+
+your_file_name.data <- Read10X(data.dir = "(...)/outs/filtered_gene_bc_matrices/") #pathway to your dir after cellranger
+
+your_file_name <- CreateSeuratObject(counts = your_file_name.data, project = "...", min.cells = 3, min.features = 200) #use basic thresholds for now, later we can think about what to change
+your_file_name
+
+## An object of class Seurat 
+## 13714 features across 2700 samples within 1 assay 
+## Active assay: RNA (13714 features, 0 variable features)
+##  1 layer present: counts
